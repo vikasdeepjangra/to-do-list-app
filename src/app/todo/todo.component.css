@@ -1,0 +1,25 @@
+.contentArea{
+    height: 70vh;
+    margin-top: 5vh;
+}
+
+.list-group{
+    border-radius: 0;
+    font-size: 3vh;
+}
+
+li{
+    list-style-type: none;
+}
+
+.list-items{
+    margin-top: 3vh;
+}
+
+.taskIndicator{
+    margin-right: 2vh;
+}
+
+.list-group-items span{
+    cursor: pointer;
+}

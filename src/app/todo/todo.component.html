@@ -1,0 +1,29 @@
+<div class="rounded-top p-3 mt-5 bg-warning">
+    <div class="text-center">
+        <h1 class="fw-bold">To-Do List</h1>
+    </div>
+</div>
+
+<div class="contentArea">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Any Goals for Today?" #taskInput>
+        <div class="input-group-append">
+            <button class="btn bg-success ms-5" type="button" (click)="addTask(taskInput)">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+    </div>
+    <ul class="list-group mt-5 p-3 rounded-bottom">
+        <li class="list-group-items list-items" *ngFor="let item of todosArr">
+            <span class="text-light">
+                <i class="text-success taskIndicator"
+                [ngClass] = "item.isDone?'fa-solid fa-circle-check':'fa-regular fa-circle'" (click)="onStatusChange(item.id, !item.isDone)">
+                </i>
+                {{item.title}}
+            </span>
+            <span class="float-end text-secondary">
+                <i class="fa-solid fa-trash-can" (click)="deleteToDo(item.id)"></i>
+            </span>
+        </li>
+    </ul>
+</div>
